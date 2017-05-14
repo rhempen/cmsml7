@@ -8,7 +8,6 @@ Darum setzen wir das hier mal ausser Kraft!!
 // set_magic_quotes_runtime(0);
 
 /* Themes */
-//define('HOST', 'http://' .$_SERVER['HTTP_HOST']. CMS_ROOT );  
 define('HOST', 'http://' .$_SERVER['HTTP_HOST']. ROOTDIR );  
 define('THEMES_DIR', 'frontend/themes/');
 define('THEME_SELECTED', THEME.'/');
@@ -52,7 +51,7 @@ define ('WARNING',E_USER_NOTICE);
 
 // error_reporting     
 // Gibt an, welche PHP-Fehlermeldungen gezeigt werden  
-error_reporting (FATAL | ERROR | WARNING); 
+error_reporting (FATAL | ERROR | WARNING); PHP_INI_SCAN_DIR
 // Alle Fehler, ausser NOTICE anzeigen
 // error_reporting (E_ALL & ~E_NOTICE & ~E_STRICT);  
 // error_reporting (E_ALL ^ E_NOTICE);

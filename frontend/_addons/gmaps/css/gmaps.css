@@ -35,7 +35,7 @@ select#umkreis {
   }  
 
 #gmapsWrapper {
-  margin: 0px auto;	
+  margin: 20px;	
   width: 900px;	  		  		
   }
 
@@ -47,7 +47,7 @@ select#umkreis {
   }
 
 #gmapsWrapperMaint {
-  margin: 0px auto;	
+  margin: 20px;
   width: 900px;	  		  		
   }
 

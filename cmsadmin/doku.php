@@ -11,8 +11,9 @@
 <link href="css/cmsadmin_admin.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 .nobullet {
-	list-style-type: none;
+	list-style-type: none;   
 }
+a { font-size: 16px; }
 </style>
 
 </head>

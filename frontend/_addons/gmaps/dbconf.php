@@ -13,14 +13,14 @@ if (preg_match('/^hero/',$_SERVER['HTTP_HOST']) || $_SERVER['HTTP_HOST'] == 'loc
 	$host       = 'localhost'; 	// Server
 	$user       = 'root';           // BenutzerIn
 	$password   = 'ayk61mz';	// Passwort
-	$db         = 'cms_e-njoy';	// db-Name
+	$db         = 'cms_xignis_ml';	// db-Name
 }
 elseif ($_SERVER['HTTP_HOST'] == 'www.publicdev.ch' || $_SERVER['HTTP_HOST'] == 'publicdev.ch') {
 	$dbtype     = 'mysqli';        // Datenbank-Server Typ
 	$host       = 'localhost'; 	   // Server
 	$user       = 'cmsuser1';				 // BenutzerIn
 	$password   = 'ayk61mz';      // Passwort
-	$db         = 'cms_e-njoy';			 // db-Name
+	$db         = 'cms_xignis_ml';			 // db-Name
 } 
 elseif ($_SERVER['HTTP_HOST'] == 'www.xignis.ch' || $_SERVER['HTTP_HOST'] == 'xignis.ch') {
 	$dbtype     = 'mysqli';         // Datenbank-Server Typ
@@ -33,11 +33,11 @@ elseif ($_SERVER['HTTP_HOST'] == 'www.xignis.ch' || $_SERVER['HTTP_HOST'] == 'xi
 define('MARKER_TABLE','cms_markers2');
 
 // Opens a connection to a mySQL server
-$connection=mysql_connect (localhost, $user, $password);
-if (!$connection) { die('Not connected : ' . mysql_error()); }
+$connection=mysqli_connect($host, $user, $password);
+if (!$connection) { die('Not connected : ' . mysqli_error()); }
 
 // Set the active mySQL database
-$db_selected = mysql_select_db($db, $connection);
-if (!$db_selected) { die ('Can\'t use db : ' . mysql_error()); }
+$db_selected = mysqli_select_db($connection, $db );
+if (!$db_selected) { die ('Can\'t use db : ' . mysqli_error()); }
 
 ?>

@@ -3,127 +3,127 @@
 /* horizontels CSS-Menu */
 
 ul#tabnav {
-	list-style-type: none;
-	margin: 0px;
-	margin-left: -8px;
-	padding-left: 6px;
-	padding-bottom: 26px;
-	border-bottom: 1px solid purple;
-	font: bold 11px Verdana, Arial, sans-serif;
+    list-style-type: none;
+    margin: 0px;
+    margin-left: -6px;
+    padding-left: 0px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid purple;
+    font: bold 12px Verdana, Arial, sans-serif;
 }
 
 ul#tabnav li {
-	float: left;
-	background-color: #dedede;
-	color: #ffffff;
-	padding: 6px 0px;
-	margin: 0px 3px;
-  border: 1px solid purple; 
+    float: left;
+    background-color: #dedede;
+    color: #ffffff;
+    padding: 5px 0px;
+    margin: 0px 3px;
+    border: 1px solid purple; 
 }
 
 ul#tabnav a:link {
-	display: inline;
-	background-color: transparent;
-	color: purple;
-	text-decoration: none;
+    display: inline;
+    background-color: transparent;
+    color: purple;
+    text-decoration: none;
 }
 
 ul#tabnav a:hover {
-	padding: 6px 0px;
-	background-color: purple;
-	color: #ffffff;
+    padding: 7px 0px;
+    background-color: purple;
+    color: #ffffff;
 }
 
 .aktivnav {
-	padding: 6px 0px;
-	background-color: purple !important;
-	color: #ffffff !important;
+    padding: 7px 0px;
+    background-color: purple !important;
+    color: #ffffff !important;
 }
 
 .passivnav {
-	padding: 6px 0px;
-	background-color: transparent;
-	color: purple;
+    padding: 7px 0px;
+    background-color: transparent;
+    color: purple;
 }
 
 select.selboxEdit {
-  width: 600px;
+    width: 600px;
 }
 
 /* CSS f�r Fragmente */
 div#msg {
-  height: 20px;
+    height: 20px;
 }
 
 div#wrapper {
-  margin: 5px 0;
-  padding: 0 0 0 10px;
+    margin: 60px 0;
+    padding: 0 0 0 5px;
 }
 
 li.lielem {
-	clear: both;
-	height: 40px;
-	background-color: #F0FFFF;
-	width: 730px;
-	border-bottom: 2px solid #999999;
+    clear: both;
+    height: 40px;
+    background-color: #F0FFFF;
+    width: 730px;
+    border-bottom: 2px solid #999999;
 }
 
 div.sortid {
-	float: left;
-	width: 30px;
-	line-height: 40px;
-	text-align: center;
-	border-right: 2px solid #999999;
+    float: left;
+    width: 30px;
+    line-height: 40px;
+    text-align: center;
+    border-right: 2px solid #999999;
 }
 
 div.divelem {
-	float: left;
-	line-height: 40px;
-	width: 450px;
-	padding-left: 10px;
+    float: left;
+    line-height: 40px;
+    width: 450px;
+    padding-left: 10px;
 }
 
 div.divwork {
-	float: left;
-	height: 40px;
+    float: left;
+    height: 40px;
     padding-left: 10px;
-	text-align: center;
-	border-left: 2px solid #999999;
+    text-align: center;
+    border-left: 2px solid #999999;
 }
 
 div.mnusort {
-	float: left;
-	line-height: 27px;
-	text-align: center;
-	padding-top: 13px;
-	padding-right: 5px;
+    float: left;
+    line-height: 27px;
+    text-align: center;
+    padding-top: 13px;
+    padding-right: 5px;
     padding-left: 5px;
-	cursor: move;
+    cursor: move;
 }
 
 span.navisort {
     /*position: relative;*/
-	cursor: move;  
+    cursor: move;  
 }
 
 span.navisort img {
-  width: 24px;
-  height: 24px;
-  border: 1px solid #323232;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #323232;
 }
 
 ul {
-  margin: 10px 0;
-  padding: 0;
-  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 ul#workmenu {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 ul#workmenu .workitem {
-	display: inline;
-	padding: 0 5px;
+    display: inline;
+    padding: 0 5px;
 }

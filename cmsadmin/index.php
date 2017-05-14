@@ -196,40 +196,40 @@ echo copyright();
   printTitelZeile($action);
   switch($action) {
     case 'NAVIGA':
-      echo '<iframe name="files" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" width="100%" height="800" src="_controllers/navi_co_maintain.php"></iframe>';
+      echo '<iframe name="files" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" src="_controllers/navi_co_maintain.php"></iframe>';
       break;
 
     case "SEITEN":
-      echo '<iframe name="pages" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" width="100%" height="800" src="_controllers/pages_co_maintain.php"></iframe>';
+      echo '<iframe name="pages" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" src="_controllers/pages_co_maintain.php"></iframe>';
       break;
 
     case "FRGMNT":
-      echo '<iframe name="pages" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" width="100%" height="800" src="_controllers/frgmnts_co_maintain.php"></iframe>';
+      echo '<iframe name="pages" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto" src="_controllers/frgmnts_co_maintain.php"></iframe>';
       break;
 
     case "ADDONS":
       $langu = strtolower(LANGUAGE);
-      echo '<iframe name="addons" frameborder="0" scrolling="auto" width="100%" height="800" src="../frontend/_addons/gmaps/maintain.php?langu='.$langu.'"></iframe>';
+      echo '<iframe name="addons" frameborder="0" scrolling="auto" src="../frontend/_addons/gmaps/maintain.php?langu='.$langu.'"></iframe>';
       break;
 
     case "MEDIEN": 
-      echo '<iframe name="medien" frameborder="0" scrolling="auto" width="100%" height="800" src="_controllers/pictures_co_maintain.php"></iframe>';
+      echo '<iframe name="medien" frameborder="0" scrolling="auto" src="_controllers/pictures_co_maintain.php"></iframe>';
       break;
 
     case "EXPLOR": 
-      echo '<iframe name="explor" frameborder="0" scrolling="auto" width="100%" height="600" src="../ajaxfilemanager/index.php"></iframe>';
+      echo '<iframe name="explor" frameborder="0" scrolling="auto" src="../ajaxfilemanager/index.php"></iframe>';
       break;
 
     case "XLINKS":
-      echo '<iframe name="xlinks" frameborder="0" scrolling="auto" width="100%" height="800" src="links.php"></iframe>';
+      echo '<iframe name="xlinks" frameborder="0" scrolling="auto" src="links.php"></iframe>';
       break;
 
     case "BACKUP":
-      echo '<iframe name="backup" frameborder="0" scrolling="auto" width="100%" height="800" src="backup/index.php"></iframe>';
+      echo '<iframe name="backup" frameborder="0" scrolling="auto" src="backup/index.php"></iframe>';
       break;
 
     case "DOCU":
-      echo '<iframe name="docu" frameborder="0" scrolling="auto" width="100%" height="800" src="doku.php"></iframe>';
+      echo '<iframe name="docu" frameborder="0" scrolling="auto" src="doku.php"></iframe>';
       break;
 
     case "LOGOUT":
@@ -237,7 +237,7 @@ echo copyright();
       break;
 
     case "CONFIG":
-      echo '<iframe name="backup" frameborder="0" scrolling="auto" width="100%" height="800" src="_controllers/config_co_maintain.php"></iframe>';
+      echo '<iframe name="backup" frameborder="0" scrolling="auto" src="_controllers/config_co_maintain.php"></iframe>';
       break;
 
     case "LOGIN":

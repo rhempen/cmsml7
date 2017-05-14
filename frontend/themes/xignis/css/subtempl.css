@@ -204,7 +204,7 @@ inhaltscontainer
 ________________________________________________*/
 .subspalte_detail_l
 {
-	width: 99.8;
+	width: 99.8px;
 	padding: 10px 0 0 0px;
 }
 
@@ -532,7 +532,7 @@ ________________________________________________*/
 	float: right;
 	border: 0px solid purple;
 	width: 300px;
-	heigth: 200px;
+	height: 200px;
 }
 
 .galerie_wrapper {

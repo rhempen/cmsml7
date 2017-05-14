@@ -2,9 +2,9 @@
 
 // zu Hause
 if (preg_match('/^hero/', $_SERVER['HTTP_HOST']) || $_SERVER['HTTP_HOST'] == 'localhost') {
-//    ini_set('include_path', ini_get('include_path') . ';c:\xampp\php\PEAR;c:\xampp\htdocs\\'.ROOTDIR);
-    ini_set('include_path', ini_get('include_path'));
-    $login_file = '\\xampp\\htdocs\\' . ROOTDIR . '\\db\\xignis\\db_login_pear.php';
+    ini_set('include_path', ini_get('include_path') . ';c:\xampp711\htdocs\pear;c:\xampp711\htdocs\\'.ROOTDIR);
+//    ini_set('include_path', ini_get('include_path'));
+    $login_file = '\\xampp711\\htdocs\\' . ROOTDIR . '\\db\\xignis\\db_login_pear.php';
 }
 // publicdev
 elseif ($_SERVER['HTTP_HOST'] == 'www.publicdev.ch' || $_SERVER['HTTP_HOST'] == 'publicdev.ch') {
