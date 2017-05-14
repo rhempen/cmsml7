@@ -131,7 +131,7 @@ class naviMaintain {
 
     // Neuen Unternavigationspunkt eroeffnen
     public function neuer_ukap($nav_id) {
-        global $db, $language;
+        global $db, $language, $browser;
         $row = $this->read_navigation_by_id($nav_id);
         $kap = $row['kap'];
         $bezeichnung = $row['bezeich_' . $language];
@@ -143,7 +143,8 @@ class naviMaintain {
         $kap_bez_low = strtolower($kap_bez);
 
         // Unterdirectory fuer diese Seite bestimmen und dann auch gleich anlegen
-        $bildpfad = $row['domain'] . '_' . $ukap_nummer;
+        $media_dir = $row['domain'] . '_' . $ukap_nummer;
+        $bildpfad = $browser->get_next_directory_for_ukap($media_dir, $domain);
         $dir_to_create = MEDIA_ROOT . '/' . $bildpfad;
         if (!is_dir($dir_to_create) && mkdir($dir_to_create)) {
             $this->mMeldung[] = 'success';

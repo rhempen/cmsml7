@@ -30,12 +30,11 @@ class picturesMaintain {
     }
 
     /* Neue Methode implementieren */
-    /*     * ******************************************************************************************
+    /* ******************************************************************************************
      * Die folgende Funktion scant ein Verzeichnis und liefert neben dem Dateinamen inkl. Pfad
      * die folgenden Dateiinformationen: fmt = last modified, fsz = Filesize, drs = Name eines
      * Unterverzeichnisses, mit $verbose=1 kann man sich die gelesenen Daten ausgeben lassen
      * ***************************************************************************************** */
-
     function dirlst($srcdir, $p = 0, $getfmt = 0, $getfsz = 0, $getdrs = 0, $verbose = 0) {
         global $bilddb;
         // falls ein Verzeichnis noch nicht existiert, wird es hier angelegt.
@@ -142,10 +141,9 @@ class picturesMaintain {
         }
     }
 
-    /*     * **********************************************************************************************
+    /* **********************************************************************************************
      * Eine Datei oder ein Verzeichnis umbenennen
      * ********************************************************************************************** */
-
     public function rename_file($dir, $file, $fileold) {
         if (is_dir($dir)) {
             $fileold = $dir . '/' . $fileold;
@@ -167,7 +165,6 @@ class picturesMaintain {
      * Eine Datei oder ein Verzeichnis l�schen
      * Wenn eine Datei geloescht werden soll, wird die entsprechende thumbnail ebenfalls geloescht
      * ********************************************************************************************** */
-
     public function delete_file($dir, $file) {
         global $extensions, $bilddb;
 
@@ -254,7 +251,6 @@ class picturesMaintain {
       @param: $path - Name des Verzeichnisses
       @return: $message - Erfolgs- oder Misserfolgsmeldung
      */
-
     public function deltree($path) {
         $count_err_dire = 0;
         if (is_dir($path)) {
@@ -281,6 +277,47 @@ class picturesMaintain {
             }
         }
         return $this->mMeldung;
+    }
+
+    /* Das nächste verfügbare Verzeichnis für einen Ukap ermitteln */
+    public function get_next_directory_for_ukap($media_dir, $domain) {
+        $pattern1 = '/' . $domain . '_' . '/';
+        $full_dir = MEDIA_ROOT . '/' . $media_dir;
+        $ukaps = array();
+
+        // Verzeichnisse auslesen und den Array absteigend sortieren 
+        $verzeichnisse = $this->scan_directories();
+        krsort($verzeichnisse);
+        // wenn das Verzeichnis NICHT existiert kann es angelegt werden
+        if (!in_array($full_dir, $verzeichnisse)) {
+            return $media_dir;
+        }
+        // Alle Einträge aus dem Array löschen, die nicht diese $doamin haben
+        foreach ($verzeichnisse as $dir => $dirname) {
+            if (!preg_match($pattern1, $dirname)) {
+                unset($verzeichnisse[$dir]);
+            }
+        }
+        // restliche Verzeichnisse durchlaufen und das UKAP (zB. navi_11_100)
+        // in einem neuen Array als Integer speichern und absteigend sortieren
+        foreach ($verzeichnisse as $dir => $dirname) {
+            $elements = explode('_', $dirname);
+            $number = array_pop($elements);
+            $ukaps[] = intval($number);
+        }
+        // falls $ukaps nicht leer ist, das Element mit der höchsten UKAP-Nummer extrahieren in $value
+        $value = empty($ukaps) ? 0 : max($ukaps);
+
+        // wenn $value = 0 ist, hat es noch kein Verzeichnis dieser Domain mit Ukap
+        if ($value > 0) {
+            // ansonsten wird eine Nummer +10 nach der höchsten existierenden Nummer erstellt
+            $elements = explode('_', $media_dir);
+            $number = array_pop($elements); // das letzte Element ist der höchste Nummer
+            $number = round($value, -1) + 10; // die neue Nummer soll auf die nächste 10er Nummer erhöht werden
+            $media_dir = $domain . '_' . strval($number);
+        }
+
+        return $media_dir;
     }
 
     /* Wenn das aktuelle Directory _images ist, dann muss das n�chste _thumbs sein und umgekehrt */
@@ -357,7 +394,7 @@ class picturesMaintain {
         global $verzeichnisse;
         // Erster Eintrag = MEDIA_ROOT = /bilder
         if (empty($verzeichnisse)) {
-          $verzeichnisse[0] = $srcdir;
+            $verzeichnisse[0] = $srcdir;
         }
         // Beginn Scanning
         $files = scandir($srcdir);
